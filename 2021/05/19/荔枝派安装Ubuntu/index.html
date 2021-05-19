@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2021/5 | Chi</title>
+  <title itemprop="name">荔枝派安装Ubuntu | Chi</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -355,107 +355,255 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
-<div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(0.png);" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="0.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">荔枝派安装Ubuntu</h1>
+      <p class="entry-census">
+        <span class="post-meta-item">
+          <a href="nekocharm.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png">
+          </a>
+        </span>
+        <span class="post-meta-item">
+          <a href="nekocharm.github.io"> chi </a>
+        </span>
+        <span class="bull">
+        ·</span>
+        <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text"> 2021-5-19 </span>
+          </span>
+          <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+          <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="iconfont icon-attention"></i>
+              </span>
+              <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+              </span>
+          </span>
+          <span class="bull">
+            ·</span>
+          </p>
     </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2021年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      05月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/">
-                          <span style="color:#0bf;">
-                          19日13:37:00</span>
-                          荔枝派安装Ubuntu
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/2021/05/18/hello-world/">
-                          <span style="color:#0bf;">
-                          18日21:23:59</span>
-                          Hello World
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>主要参考官方文档<a target="_blank" rel="noopener" href="http://zero.lichee.pro/%E5%85%A5%E9%97%A8/intro_cn.html">Lichee zero 文档</a> 和 <a target="_blank" rel="noopener" href="https://whycan.com/t_547.html">制作荔枝派Zero开发板 TF/SD卡启动盘</a></p>
+<h1 id="编译uboot"><a href="#编译uboot" class="headerlink" title="编译uboot"></a>编译uboot</h1><h2 id="安装交叉编译器"><a href="#安装交叉编译器" class="headerlink" title="安装交叉编译器"></a>安装交叉编译器</h2><pre><code class="bash"># 下载编译器 gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf.tar.xz
+tar xvf gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf.tar.xz
+vim /etc/bash.bashrc
+# PATH=&quot;$PATH:./gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin&quot;
+source /etc/bash.bashrc
+arm-linux-gnueabihf-gcc -v
+sudo apt-get install device-tree-compiler
+</code></pre>
+<h2 id="下载uboot源码"><a href="#下载uboot源码" class="headerlink" title="下载uboot源码"></a>下载uboot源码</h2><p>git clone因为网络原因可能会失败，可以下载zip解压</p>
+<pre><code class="bash">git clone https://github.com/Lichee-Pi/u-boot.git -b v3s-current
+#or git clone https://github.com/Lichee-Pi/u-boot.git -b v3s-spi-experimental
+</code></pre>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><pre><code class="bash">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero_800x480LCD_defconfig
+#or make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero480x272LCD_defconfig
+#or make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero_defconfig
+make ARCH=arm menuconfig
+time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- 2&gt;&amp;1 | tee build.log
+</code></pre>
+<h2 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h2><p>这里我修改源文件会编译不成功，所以我选择先编译再修改环境变量</p>
+<pre><code>setenv bootargs &quot;console=ttyS0,115200 panic=5 rootwait mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,6M(kernel)ro,-(rootfs) root=/dev/mmcblk0p2 earlyprintk rw&quot;
+setenv bootcmd &quot;setenv bootm_boot_mode sec; load mmc 0:1 0x41000000 zImage;load mmc 0:1 0x41800000 sun8i-v3s-licheepi-zero-dock.dtb;bootz 0x41000000 - 0x41800000; &quot;
+saveenv
+</code></pre>
+<h1 id="编译linux内核"><a href="#编译linux内核" class="headerlink" title="编译linux内核"></a>编译linux内核</h1><h2 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h2><p>同样可以下载zip</p>
+<pre><code class="bash">git clone https://github.com/Lichee-Pi/linux.git
+# 默认zero-4.10.y分支，我用的5.2分支
+</code></pre>
+<h2 id="编译源码"><a href="#编译源码" class="headerlink" title="编译源码"></a>编译源码</h2><pre><code class="bash">make ARCH=arm licheepi_zero_defconfig
+make ARCH=arm menuconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules_install
+</code></pre>
+<h2 id="通过otg共享网络"><a href="#通过otg共享网络" class="headerlink" title="通过otg共享网络"></a>通过otg共享网络</h2><p>目前我也没弄太明白</p>
+<pre><code class="bash">make ARCH=arm menuconfig
+</code></pre>
+<p>按下图配置</p>
+<p><img src="/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/1.png"></p>
+<p><img src="/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/2.png"></p>
+<h1 id="根文件系统"><a href="#根文件系统" class="headerlink" title="根文件系统"></a>根文件系统</h1><h2 id="下载armhf版的ubuntu-base"><a href="#下载armhf版的ubuntu-base" class="headerlink" title="下载armhf版的ubuntu-base"></a>下载armhf版的ubuntu-base</h2><blockquote>
+<p>如何下载直接百度</p>
+<p>下文默认解压完在rootfs文件夹里</p>
+</blockquote>
+<h2 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h2><pre><code class="bash">sudo apt-get install qemu-user-static
+cp /usr/bin/qemu-arm-static rootfs/usr/bin
+</code></pre>
+<h2 id="配置DNS"><a href="#配置DNS" class="headerlink" title="配置DNS"></a>配置DNS</h2><p>直接把主机的DNS配置复制到下载的根文件系统</p>
+<pre><code class="bash">cp /etc/resolv.conf rootfs/etc/resolv.conf
+</code></pre>
+<h2 id="修改软件源"><a href="#修改软件源" class="headerlink" title="修改软件源"></a>修改软件源</h2><pre><code class="bash">sudo vim rootfs/etc/qpt/source.list
+</code></pre>
+<pre><code class="vim"># 这里用的清华源
+# 下面为vim命令
+:% s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g
+</code></pre>
+<h2 id="创建挂载和解挂载脚本"><a href="#创建挂载和解挂载脚本" class="headerlink" title="创建挂载和解挂载脚本"></a>创建挂载和解挂载脚本</h2><h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><pre><code class="shell">#!/bin/bash
+
+echo &quot;Mounting file system&quot;
+
+mount -t proc /proc    /rootfs/proc
+mount -t sysfs /sys /rootfs/sys
+mount -o bind /dev    /rootfs/dev
+mount -o bind /dev/pts /rootfs/dev/pts
+
+echo &quot;Change root&quot;
+
+chroot rootfs/
+</code></pre>
+<h3 id="解挂载"><a href="#解挂载" class="headerlink" title="解挂载"></a>解挂载</h3><pre><code class="shell">echo &quot;Umounting file system&quot;
+
+umount rootfs/proc
+umount rootfs/sys
+umount rootfs/dev/pts
+umount rootfs/dev
+</code></pre>
+<h2 id="挂载根文件系统"><a href="#挂载根文件系统" class="headerlink" title="挂载根文件系统"></a>挂载根文件系统</h2><pre><code class="bash">sudo chmod 777 mount.sh
+sudo ./mount.sh
+</code></pre>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><pre><code class="bash">passwd root
+</code></pre>
+<h2 id="设置主机名和host"><a href="#设置主机名和host" class="headerlink" title="设置主机名和host"></a>设置主机名和host</h2><pre><code class="bash">echo &quot;licheepi&quot;&gt; /etc/hostname
+echo &quot;127.0.0.1 localhost&quot; &gt; /etc/hosts
+</code></pre>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><pre><code class="bash">useradd -s &#39;/bin/bash&#39; -m -G adm,sudo pi
+passwd pi
+</code></pre>
+<h2 id="安装常用软件"><a href="#安装常用软件" class="headerlink" title="安装常用软件"></a>安装常用软件</h2><pre><code class="bash">export LC_ALL=C
+apt-get update
+apt-get install sudo
+apt-get install language-pack-en-base
+apt-get install ssh
+apt-get install net-tools
+apt-get install ethtool
+apt-get install ifupdown
+apt-get install iputils-ping
+apt-get install rsyslog
+apt-get install htop
+apt-get install vim
+chmod 0400 /etc/ssh/ssh_host_*key
+echo &#39;PermitRootLogin yes&#39; &gt;&gt; /etc/ssh/sshd_config
+</code></pre>
+<blockquote>
+<p>chmod 设置SSHD的本机私钥，设置其他用户不能修改<br>echo 把root写入到SSHD配置文件里</p>
+</blockquote>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><blockquote>
+<p>我在登陆时遇到了两个问题</p>
+<ol>
+<li>不能用su命令</li>
+<li>不能用sudo命令</li>
+</ol>
+</blockquote>
+<p>解决办法</p>
+<pre><code class="bash">chown -R root:root /bin/su
+chmod u+s /bin/su
+chown root:root /usr/bin/sudo
+chmod 4755 /usr/bin/sudo
+</code></pre>
+<h2 id="配置串口调试"><a href="#配置串口调试" class="headerlink" title="配置串口调试"></a>配置串口调试</h2><h3 id="此处不太清楚按下面就成功了"><a href="#此处不太清楚按下面就成功了" class="headerlink" title="此处不太清楚按下面就成功了"></a><strong>此处不太清楚</strong>按下面就成功了</h3><pre><code class="bash">cp /usr/lib/systemd/system/serial-getty@.service /etc/systemd/system/serial-getty@ttyS0.service
+</code></pre>
+<h3 id="修改-etc-systemd-system-serial-getty-ttyS0-service"><a href="#修改-etc-systemd-system-serial-getty-ttyS0-service" class="headerlink" title="修改/etc/systemd/system/serial-getty@ttyS0.service"></a>修改/etc/systemd/system/serial-getty@ttyS0.service</h3><pre><code class="bash">[Service]
+ExecStart=-/sbin/agetty -o &#39;-p -- \\u&#39; --keep-baud 115200 %I $TERM 
+Type=idle
+</code></pre>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><pre><code class="bash">ln -s /etc/systemd/system/serial-getty@ttyS0.service /etc/systemd/system/getty.target.wants/
+ln -s /lib/systemd/system/getty@.service /etc/systemd/system/getty.target.wants/getty@ttyS0.
+service
+</code></pre>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><pre><code class="bash">exit
+sudo ./umount.sh
+</code></pre>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
       </article>
-    </div>
-  </div>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/05/18/hello-world/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" 
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" 
+                onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">Next Post</span>
+              <div class="info">
+                <h3>Hello World</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="nekocharm.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png" itemprop="image" alt="chi" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="nekocharm.github.io" itemprop="url" rel="author">chi</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>见贤思齐焉，见不贤而内自省也</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
