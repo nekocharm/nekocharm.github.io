@@ -89,7 +89,9 @@ deploy:
 backup:
   type: git
   message: backup my blog of https://nekocharm.github.io/
-  repository: git@github.com:nekocharm/nekocharm.github.io.git,hexo
+  theme: Sakura
+  repository: 
+    github: git@github.com:nekocharm/nekocharm.github.io.git,hexo
 
 #RSS
 feed:
