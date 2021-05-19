@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: hojun
+title: Chi
 subtitle:
-description: 好少年光芒万丈
+description: 
 keywords:
-author: hojun
+author: chi
 language: zh-cn
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://www.baidu.com
+url: https://nekocharm.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -38,7 +38,10 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight: 
@@ -84,14 +87,6 @@ deploy:
   type: git
   repo: git@github.com:nekocharm/nekocharm.github.io.git
   branch: main
-
-# backup
-backup:
-  type: git
-  message: backup my blog of https://nekocharm.github.io/
-  theme: Sakura
-  repository: 
-    github: git@github.com:nekocharm/nekocharm.github.io.git,hexo
 
 #RSS
 feed:

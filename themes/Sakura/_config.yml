@@ -1,18 +1,18 @@
 # site name
-prefixName: さくら荘その
-siteName: hojun
+prefixName: nekocharm
+siteName: Chi
 # favicon and site master avatar
 favicon: /images/favicon.ico
-avatar: /img/custom/avatar.jpg
-url: https://sakura.hojun.cn
-description: Live your life with passion! With some drive!
-cdn: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6
+avatar: /img/custom/avatar.png
+url: https://nekocharm.github.io
+description: 见贤思齐焉，见不贤而内自省也
+cdn: https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0
 pjax: 1
 # 1开启
 mathjax: 0
 
-notice: hexo-Sakura主题已经开源，目前正在开发中...
-lazyloadImg: https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg
+notice: 欢迎来到我的博客
+lazyloadImg: https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg
 
 menus:
   首页: { path: /, fa: fa-fort-awesome faa-shake }
@@ -37,8 +37,8 @@ menus:
     主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
     Lab: {path: /lab/, fa: fa-cogs },
   } }
-  客户端: { path: /client/, fa: fa-android faa-vertical }
-  RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
+  # 客户端: { path: /client/, fa: fa-android faa-vertical }
+  # RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
 
 
 # Home page sort type: -1: newer first，1: older first.
@@ -47,14 +47,10 @@ homePageSortType: -1
 homeArticleShown: 10
 # 背景图片 更好的修改
 bg:
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp
-  - https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp
+  - https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/cover/(0).webp
+  - https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/cover/(1).webp
+  - https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/cover/(2).webp
+  - https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/cover/(3).webp
 
 # 背景图片样式 空 原图效果 filter-dim 阴影 filter-grid 横条 filter-dot 点点
 bgclass: filter-dot
@@ -62,32 +58,28 @@ bgclass: filter-dot
 # startdash url, title, desc img
 startdash: 
   - {url: /theme-sakura/, title: Sakura, desc: 本站 hexo 主题, img: /img/startdash/sakura.md.png}
-  - {url: http://space.bilibili.com/271849279, title: Bilibili, desc: 博主的b站视频, img: /img/startdash/bilibili.jpg}
-  - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
+  # - {url: https://space.bilibili.com/179578201, title: Bilibili, desc: 博主的b站视频, img: /img/startdash/bilibili.jpg}
+  # - {url: /, title: nekocharm, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
 
 
 
 # your site build time or founded date
-siteBuildingTime: 07/17/2018
+siteBuildingTime: 05/19/2021
 
 #social  url, img PC端配置
 social:
-  github: {url: http://github.com/honjun, img: /img/social/github.png}
-  sina: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/sina.png}
-  wangyiyun: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/wangyiyun.png}
-  zhihu: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/zhihu.png}
-  email: {url: http://weibo.com/mashirozx?is_all=1, img: /img/social/email.svg}
-  wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
-  wechat2: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
+  github: {url: https://github.com/nekocharm, img: /img/social/github.png}
+  gitee: {url: https://gitee.com/jumbajookiba, img: /img/social/gitee.png}
+  email: {url: 1832310994@qq.com, img: /img/social/email.svg}
+  bilibili: {url: https://space.bilibili.com/179578201, img: /img/social/bilibili.png}
+  # wechat: {url: /#, qrcode: /img/custom/wechat.jpg, img: /img/social/wechat.png}
 
 #social  url, img 移动端配置
 msocial:
-  github: {url: http://github.com/honjun, fa: fa-github, color: 333}
-  weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
-  qq: {url: https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes, fa: fa-qq, color: 25c6fe}
+  github: {url: https://github.com/nekocharm, fa: fa-github, color: 333}
+  # weibo: {url: http://weibo.com/mashirozx?is_all=1, fa: fa-weibo, color: dd4b39}
 
 donate:
-  paypal: https://www.paypal.me/hojuncn
   alipay: /img/custom/donate/AliPayQR.jpg
   wechat: /img/custom/donate/WeChanQR.jpg
   wechatSQ: /img/custom/donate/WeChanSQ.jpg
@@ -111,7 +103,10 @@ aplayer:
   mutex: true
 
 # Valine
-valine: true
+valine: false
 v_appId: GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz
 v_appKey: mgOpfzbkHYqU92CV4IDlAUHQ
+
+live2d: 
+  enable: true
 
