@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">about | Chi</title>
+  <title itemprop="name">荔枝派烧录系统 | Chi</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -341,88 +341,148 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/banner/about.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        关于</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-<!-- 因为vue和botui更新导至bug,现将对话移至js下的botui中配置 -->
-<div class="entry-content">
-  <div class="moe-mashiro" style="text-align:center; font-size: 50px; margin-bottom: 20px;">[さくら荘のhojun]</div>
-  <div id="hello-mashiro" class="popcontainer" style="min-height: 300px; padding: 2px 6px 4px; background-color: rgba(242, 242, 242, 0.5); border-radius: 10px;">
-    <center>
-    <p>
-    </p>
-    <h4>
-    与&nbsp;<ruby>
-    Mashiro&nbsp;<rp>
-    （</rp>
-    <rt>
-    真（ま）白（しろ）</rt>
-    <rp>
-    ）</rp>
-    </ruby>
-    对话中...</h4>
-    <p>
-    </p>
-    </center>
-    <bot-ui></botui>
-  </div>
-</div>
-<script src="/js/botui.js"></script>
-<script>
-bot_ui_ini()
-</script>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-      <!-- .entry-content -->
-      
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/AliPayQR.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanQR.png"></li>
-            </ul>
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png);" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">荔枝派烧录系统</h1>
+      <p class="entry-census">
+        <span class="post-meta-item">
+          <a href="https://nekocharm.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png">
+          </a>
+        </span>
+        <span class="post-meta-item">
+          <a href="https://nekocharm.github.io"> chi </a>
+        </span>
+        <span class="bull">
+        ·</span>
+        <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text"> 2021-5-20 </span>
+          </span>
+          <span class="bull">
+        ·</span>
+      <!-- 浏览数显示 -->
+          <span class="post-meta-item" >
+              <span class="post-meta-item-icon">
+                <i class="iconfont icon-attention"></i>
+              </span>
+              <span class="post-meta-item-text">本文共<span id="busuanzi_value_page_pv"> </span>次阅读
+              </span>
+          </span>
+          <span class="bull">
+            ·</span>
+          </p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="安装工具并创建分区"><a href="#安装工具并创建分区" class="headerlink" title="安装工具并创建分区"></a>安装工具并创建分区</h1><h2 id="在linux虚拟机里安装GParted"><a href="#在linux虚拟机里安装GParted" class="headerlink" title="在linux虚拟机里安装GParted"></a>在linux虚拟机里安装GParted</h2><pre><code class="bash">sudo apt-get install gparted
+</code></pre>
+<h2 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h2><p>uboot需要烧录到8k偏移处，需在前面空出一部分空间</p>
+<p>按下图创建分区</p>
+<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/1.png"></p>
+<h1 id="烧录系统"><a href="#烧录系统" class="headerlink" title="烧录系统"></a>烧录系统</h1><h2 id="烧录uboot"><a href="#烧录uboot" class="headerlink" title="烧录uboot"></a>烧录uboot</h2><p>使用dd将编译好的uboot烧录到内存卡，编译好的文件就在uboot所在的目录下</p>
+<pre><code class="bash">sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8
+</code></pre>
+<h2 id="复制zImage和设备树文件到fat16分区"><a href="#复制zImage和设备树文件到fat16分区" class="headerlink" title="复制zImage和设备树文件到fat16分区"></a>复制zImage和设备树文件到fat16分区</h2><blockquote>
+<p>zImage文件位于linux文件夹下的arch/arm/boot/文件夹中</p>
+<p>dtb文件位于linux文件夹下的arch/arm/boot/dts/文件夹中</p>
+</blockquote>
+<h2 id="复制根文件系统"><a href="#复制根文件系统" class="headerlink" title="复制根文件系统"></a>复制根文件系统</h2><p>将处理好的根文件系统直接复制到ext4分区里</p>
+<h1 id="启动测试"><a href="#启动测试" class="headerlink" title="启动测试"></a>启动测试</h1><p>将usb转ttl连接到uart0</p>
+<p>在uboot启动时按任意键</p>
+<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/2.png"></p>
+<p>修改环境变量bootargs和bootcmd，从内存卡启动</p>
+<pre><code>setenv bootargs &quot;console=ttyS0,115200 panic=5 rootwait mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,6M(kernel)ro,-(rootfs) root=/dev/mmcblk0p2 earlyprintk rw&quot;
+setenv bootcmd &quot;setenv bootm_boot_mode sec; load mmc 0:1 0x41000000 zImage;load mmc 0:1 0x41800000 sun8i-v3s-licheepi-zero-dock.dtb;bootz 0x41000000 - 0x41800000; &quot;
+saveenv
+</code></pre>
+<p>输入<code>boot</code>进入系统</p>
+<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/3.png"></p>
+
+        </div>
+
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanQR.png"></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
       <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png" 
+                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" 
+                onerror="imgError(this,3)" src="https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png">
+              </div>
+              <span class="label">Next Post</span>
+              <div class="info">
+                <h3>荔枝派安装Ubuntu</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png" itemprop="image" alt="Chi" height="70" width="70"></a>
+          <a href="https://nekocharm.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png" itemprop="image" alt="chi" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://nekocharm.github.io" itemprop="url" rel="author">Chi</a>
+            <a href="https://nekocharm.github.io" itemprop="url" rel="author">chi</a>
             </h3>
           </div>
         </div>
         <hr>
         <p><i class="iconfont icon-write"></i>见贤思齐焉，见不贤而内自省也</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
