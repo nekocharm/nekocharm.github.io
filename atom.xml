@@ -6,7 +6,7 @@
   <link href="https://nekocharm.github.io/atom.xml" rel="self"/>
   
   <link href="https://nekocharm.github.io/"/>
-  <updated>2021-05-19T06:46:27.737Z</updated>
+  <updated>2021-05-20T03:38:12.497Z</updated>
   <id>https://nekocharm.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://nekocharm.github.io/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/"/>
     <id>https://nekocharm.github.io/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/</id>
     <published>2021-05-19T05:37:00.000Z</published>
-    <updated>2021-05-19T06:46:27.737Z</updated>
+    <updated>2021-05-20T03:38:12.497Z</updated>
     
     
       
@@ -36,48 +36,6 @@
     
     <category term="技术" scheme="https://nekocharm.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://nekocharm.github.io/2021/05/18/hello-world/"/>
-    <id>https://nekocharm.github.io/2021/05/18/hello-world/</id>
-    <published>2021-05-18T13:23:59.341Z</published>
-    <updated>2021-05-19T00:56:15.144Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="https://nekocharm.github.io/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>https://nekocharm.github.io/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2021-05-18T15:21:30.516Z</updated>
-    
-    
-    <summary type="html">hexo-sakura主题使用教程</summary>
-    
-    
-    
-    <category term="技术" scheme="https://nekocharm.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="web" scheme="https://nekocharm.github.io/tags/web/"/>
-    
-    <category term="悦读" scheme="https://nekocharm.github.io/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   

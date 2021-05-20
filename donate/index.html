@@ -324,23 +324,9 @@
                   <ul class="sub-menu">
                     
                       <li>
-                        <a href="/about/">
-                          <i class="fa fa-meetup" aria-hidden="true"></i>
-                          我？
-                        </a>
-                      </li>
-                    
-                      <li>
                         <a href="/theme-sakura/">
                           <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
                           主题
-                        </a>
-                      </li>
-                    
-                      <li>
-                        <a href="/lab/">
-                          <i class="fa fa-cogs" aria-hidden="true"></i>
-                          Lab
                         </a>
                       </li>
                     
@@ -399,11 +385,11 @@
   </article>
   <section class="author-profile">
     <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png" itemprop="image" alt="hojun" height="70" width="70"></a>
+      <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/avatar.png" itemprop="image" alt="Chi" height="70" width="70"></a>
       <div class="meta">
         <span class="title">Author</span>
         <h3 itemprop="name">
-        <a href="https://nekocharm.github.io" itemprop="url" rel="author">hojun</a>
+        <a href="https://nekocharm.github.io" itemprop="url" rel="author">Chi</a>
         </h3>
       </div>
     </div>
@@ -419,8 +405,8 @@
     var MainBox = $('#MainBox');
     var BTCQR = '/images/donate/BTCQR.png'; // 二维码路径
     var AliPayQR  = 'https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/AliPayQR.jpg';
-    var WeChanQR  = 'https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanSQ.jpg';
-
+    //var WeChanQR  = 'https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanSQ.png';
+    var WeChanQR = 'https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/custom/donate/WeChanQR.png';
     function showQR(QR) {
       if (QR) {
         MainBox.css('background-image','url('+QR+')');
@@ -753,23 +739,9 @@ $(document).ready(function() {
           <ul class="sub-menu">
             
               <li>
-                <a href="/about/">
-                  <i class="fa fa-meetup" aria-hidden="true"></i>
-                  我？
-                </a>
-              </li>
-            
-              <li>
                 <a href="/theme-sakura/">
                   <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
                   主题
-                </a>
-              </li>
-            
-              <li>
-                <a href="/lab/">
-                  <i class="fa fa-cogs" aria-hidden="true"></i>
-                  Lab
                 </a>
               </li>
             
