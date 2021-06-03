@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">荔枝派烧录系统 | Chi</title>
+  <title itemprop="name">VFD屏幕驱动 | Chi</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -347,10 +347,10 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png);" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://img.vim-cn.com/eb/10f65bedf3e44d9f5dee203f9ebbe4aa00af37.jpg);" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/eb/10f65bedf3e44d9f5dee203f9ebbe4aa00af37.jpg">
     </div>
     <header class="pattern-header single-header">
-      <h1 class="entry-title">荔枝派烧录系统</h1>
+      <h1 class="entry-title">VFD屏幕驱动</h1>
       <p class="entry-census">
         <span class="post-meta-item">
           <a href="https://nekocharm.github.io">
@@ -366,7 +366,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text"> 2021-5-20 </span>
+              <span class="post-meta-item-text"> 2021-5-27 </span>
           </span>
           <span class="bull">
         ·</span>
@@ -392,29 +392,223 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="安装工具并创建分区"><a href="#安装工具并创建分区" class="headerlink" title="安装工具并创建分区"></a>安装工具并创建分区</h1><h2 id="在linux虚拟机里安装GParted"><a href="#在linux虚拟机里安装GParted" class="headerlink" title="在linux虚拟机里安装GParted"></a>在linux虚拟机里安装GParted</h2><pre><code class="bash">sudo apt-get install gparted
-</code></pre>
-<h2 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h2><p>uboot需要烧录到8k偏移处，需在前面空出一部分空间</p>
-<p>按下图创建分区</p>
-<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/1.png"></p>
-<h1 id="烧录系统"><a href="#烧录系统" class="headerlink" title="烧录系统"></a>烧录系统</h1><h2 id="烧录uboot"><a href="#烧录uboot" class="headerlink" title="烧录uboot"></a>烧录uboot</h2><p>使用dd将编译好的uboot烧录到内存卡，编译好的文件就在uboot所在的目录下</p>
-<pre><code class="bash">sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8
-</code></pre>
-<h2 id="复制zImage和设备树文件到fat16分区"><a href="#复制zImage和设备树文件到fat16分区" class="headerlink" title="复制zImage和设备树文件到fat16分区"></a>复制zImage和设备树文件到fat16分区</h2><blockquote>
-<p>zImage文件位于linux文件夹下的arch/arm/boot/文件夹中</p>
-<p>dtb文件位于linux文件夹下的arch/arm/boot/dts/文件夹中</p>
-</blockquote>
-<h2 id="复制根文件系统"><a href="#复制根文件系统" class="headerlink" title="复制根文件系统"></a>复制根文件系统</h2><p>将处理好的根文件系统直接复制到ext4分区里</p>
-<h1 id="启动测试"><a href="#启动测试" class="headerlink" title="启动测试"></a>启动测试</h1><p>将usb转ttl连接到uart0</p>
-<p>在uboot启动时按任意键</p>
-<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/2.png"></p>
-<p>修改环境变量bootargs和bootcmd，从内存卡启动</p>
-<pre><code>setenv bootargs &quot;console=ttyS0,115200 panic=5 rootwait mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,6M(kernel)ro,-(rootfs) root=/dev/mmcblk0p2 earlyprintk rw&quot;
-setenv bootcmd &quot;setenv bootm_boot_mode sec; load mmc 0:1 0x41000000 zImage;load mmc 0:1 0x41800000 sun8i-v3s-licheepi-zero-dock.dtb;bootz 0x41000000 - 0x41800000; &quot;
-saveenv
-</code></pre>
-<p>输入<code>boot</code>进入系统</p>
-<p><img src="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/3.png"></p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近买了一块VFD（真空荧光管），记录一下驱动的方法和遇到的问题。之前各种驱动都是一通抄例程然后改，然后遇到了这块屏幕，当然也给了例程，但因为给了官方文档，我就试着自己驱动一下试试，幸好前几天买了一个逻辑分析仪，让我第一次仔细研究了一下SPI的时序。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/0.jpg"></p>
+<p>实物图如上图所示，使用spi通信，但这块屏spi通信有点特殊，后文详细说明。</p>
+<h3 id="显示原理"><a href="#显示原理" class="headerlink" title="显示原理"></a>显示原理</h3><p>阴极由多根钨丝组成，通电时会发射电子束。栅极是薄金属板制成的龟纹金属网。阳极制成要显示的图形的形状，并覆盖有荧光粉。通过电子束轰击阳极使荧光粉发光来显示不同字符。</p>
+<h3 id="通信协议"><a href="#通信协议" class="headerlink" title="通信协议"></a>通信协议</h3><p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/1.png"></p>
+<p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/2.png"></p>
+<p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/3.png"></p>
+<p>官方手册里对spi的要求如上图，比较特殊的是数据是低位先行，这我还是第一次遇到。</p>
+<h1 id="驱动"><a href="#驱动" class="headerlink" title="驱动"></a>驱动</h1><h2 id="启动后的流程"><a href="#启动后的流程" class="headerlink" title="启动后的流程"></a>启动后的流程</h2><p>这里的前两个步骤都没有用到。</p>
+<p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/4.png"></p>
+<h2 id="寄存器说明"><a href="#寄存器说明" class="headerlink" title="寄存器说明"></a>寄存器说明</h2><p><img src="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/5.png"></p>
+<p>这是官方文档中对寄存器的说明，下面对寄存器详细介绍。</p>
+<h3 id="DCRAM数据写入命令"><a href="#DCRAM数据写入命令" class="headerlink" title="DCRAM数据写入命令"></a>DCRAM数据写入命令</h3><p>DCRAM（数据控制RAM）是直接控制显示的寄存器，通过写这个寄存器就能直接显示，X4-X0地址指的就是荧光管的位数，这个荧光管有八位，所有有效地址为20H-27H。</p>
+<p>第一个字节，选定该模式并指定地址X4-X0，设定初始地址。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">X4</td>
+<td align="center">X3</td>
+<td align="center">X2</td>
+<td align="center">X1</td>
+<td align="center">X0</td>
+</tr>
+</tbody></table>
+<p>第二个字节，开始写入要显示的字符编码，此编码为CGROM和CGRAM里的编码。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">C7</td>
+<td align="center">C6</td>
+<td align="center">C5</td>
+<td align="center">C4</td>
+<td align="center">C3</td>
+<td align="center">C2</td>
+<td align="center">C1</td>
+<td align="center">C0</td>
+</tr>
+</tbody></table>
+<p>可以继续写第三个字节，第四个字节，地址会自动加一，当超过有效地址后写入的字节无效。</p>
+<h3 id="CGRAM数据写入命令"><a href="#CGRAM数据写入命令" class="headerlink" title="CGRAM数据写入命令"></a>CGRAM数据写入命令</h3><p>CGRAM是用户自定义的字库，用户可以在里面写入自己的字库。</p>
+<p>第一个字节，选定地址Y2-Y0，用户自定义字库共有8个用三位地址线指定。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">*</td>
+<td align="center">*</td>
+<td align="center">Y2</td>
+<td align="center">Y1</td>
+<td align="center">Y0</td>
+</tr>
+</tbody></table>
+<p>第二个字节，写入字库字模第一列，该荧光管每一位5x7，故最高位无效。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">D30</td>
+<td align="center">D25</td>
+<td align="center">D20</td>
+<td align="center">D15</td>
+<td align="center">D10</td>
+<td align="center">D5</td>
+<td align="center">D0</td>
+</tr>
+</tbody></table>
+<p>剩下字节同第二字节，共需要写入5行。若继续写入数据则地址自动加一，存入下一个位置。</p>
+<h3 id="ADRAM数据写入命令"><a href="#ADRAM数据写入命令" class="headerlink" title="ADRAM数据写入命令"></a>ADRAM数据写入命令</h3><p>ADRAM（附加数据RAM），这个似乎是用来显示附加字符的，这块荧光管似乎没有附加字符。</p>
+<h3 id="亮度设置命令"><a href="#亮度设置命令" class="headerlink" title="亮度设置命令"></a>亮度设置命令</h3><p>第一个字节，进入亮度设置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">*</td>
+<td align="center">*</td>
+</tr>
+</tbody></table>
+<p>第二个字节，亮度等级00H-FFH，但是具体亮度官方文档介绍如下图。</p>
+<table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">H7</td>
+<td align="center">H6</td>
+<td align="center">H5</td>
+<td align="center">H4</td>
+<td align="center">H3</td>
+<td align="center">H2</td>
+<td align="center">H1</td>
+<td align="center">H0</td>
+</tr>
+</tbody></table>
+<h3 id="显示控制命令"><a href="#显示控制命令" class="headerlink" title="显示控制命令"></a>显示控制命令</h3><table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">LS</td>
+<td align="center">HS</td>
+</tr>
+</tbody></table>
+<p>LS=0，HS=0时正常显示。LS=1，HS=0时关闭，在上电或重启时为关闭状态。其他情况为全部亮，不推荐使用。</p>
+<h3 id="待机模式命令"><a href="#待机模式命令" class="headerlink" title="待机模式命令"></a>待机模式命令</h3><table>
+<thead>
+<tr>
+<th align="center">B7</th>
+<th align="center">B6</th>
+<th align="center">B5</th>
+<th align="center">B4</th>
+<th align="center">B3</th>
+<th align="center">B2</th>
+<th align="center">B1</th>
+<th align="center">B0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">*</td>
+<td align="center">ST</td>
+</tr>
+</tbody></table>
+<p>ST=0正常显示，ST=1待机模式</p>
 
         </div>
 
@@ -444,28 +638,11 @@ saveenv
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2021/05/27/VFD%E5%B1%8F%E5%B9%95%E9%A9%B1%E5%8A%A8/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/eb/10f65bedf3e44d9f5dee203f9ebbe4aa00af37.jpg" 
-                style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" 
-                src="https://img.vim-cn.com/eb/10f65bedf3e44d9f5dee203f9ebbe4aa00af37.jpg">
-              </div>
-              <span class="label">Previous Post</span>
-              <div class="info">
-                <h3>VFD屏幕驱动</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2021/05/19/%E8%8D%94%E6%9E%9D%E6%B4%BE%E5%AE%89%E8%A3%85Ubuntu/" rel="next">
+            <a href="/2021/05/20/%E8%8D%94%E6%9E%9D%E6%B4%BE%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/nekocharm/cdn@1.0/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img.vim-cn.com/bd/eb08fa1c05937ec3ae0aa1b97122b4582bcfc5.png" 
                 style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" 
@@ -473,7 +650,7 @@ saveenv
               </div>
               <span class="label">Next Post</span>
               <div class="info">
-                <h3>荔枝派安装Ubuntu</h3>
+                <h3>荔枝派烧录系统</h3>
                 <hr>
               </div>
             </a>

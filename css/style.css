@@ -1315,7 +1315,22 @@ img {
 
 table {
     margin: 0 0 1.5em;
+    border: 1px solid #dedede;
+    margin: 15px auto;
+    border-collapse: collapse;
+    empty-cells: show;
     width: 100%
+}
+
+table th,
+table td {
+  height: 35px; /*统一每一行的默认高度*/
+  border: 1px solid #dedede; /*内部边框样式*/
+  padding: 0 10px; /*内边距*/
+}
+
+table tr:hover {
+    background: #efefef; 
 }
 
 button,
