@@ -123,4 +123,6 @@ LS=0，HS=0时正常显示。LS=1，HS=0时关闭，在上电或重启时为关�
 ST=0正常显示，ST=1待机模式
 
 
-
+<div class="bilibili"> 
+<iframe src="//player.bilibili.com/player.html?aid=291000062&bvid=BV1yf4y1b7HT&cid=352270193&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
